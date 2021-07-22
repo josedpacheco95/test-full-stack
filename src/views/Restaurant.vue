@@ -7,6 +7,7 @@
     />
     <Gallery :pictures="JSON.parse(restaurant.pictures)"/>
     <CommentsList/>
+    <CommentsForm/>
   </div>
 </template>
 
@@ -14,7 +15,8 @@
 import { mapActions, mapGetters } from 'vuex';
 import RestaurantHeader from '../components/restaurant/header.vue';
 import Gallery from '../components/restaurant/pictures.vue';
-import CommentsList from '../components/restaurant/commentsList.vue';
+import CommentsList from '../components/restaurant/CommentsList.vue';
+import CommentsForm from '../components/restaurant/CommentsForm.vue';
 
 export default {
   name: 'Restaurant',
@@ -22,6 +24,7 @@ export default {
     RestaurantHeader,
     Gallery,
     CommentsList,
+    CommentsForm,
   },
   async created() {
     console.log(this.$route);

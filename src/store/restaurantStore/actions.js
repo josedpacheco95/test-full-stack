@@ -10,9 +10,9 @@ export const listRestaurants = ({ commit }) => {
     .catch((err) => err.response);
 };
 
-export const listComments = ({ commit }) => {
+export const listComments = ({ commit }, id) => {
   commit('SET_COMMENTS', []);
-  return axios.get('/comments')
+  return axios.get(`/comments/${id}`)
     .then((response) => {
       commit('SET_COMMENTS', response.data);
       return response;
@@ -30,10 +30,10 @@ export const getRestaurant = ({ commit }, payload) => {
     .catch((err) => err.response);
 };
 
-export const createComment = ({ dispatch }, payload) => axios.post('/comments', payload.data)
+export const createComment = ({ dispatch }, data) => axios.post('/comments', data)
   .then((response) => {
     console.log(response);
-    dispatch('listComments');
+    dispatch('listComments', data.restaurantId);
     return response;
   })
   .catch((err) => err.response);
