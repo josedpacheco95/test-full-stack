@@ -2,6 +2,8 @@
 
 ## Server setup instructions
 ```
+  Yo use Postgresql como base de datos para este proyecto.
+  
   Crear un archivo .env en la carpeta server con los siguientes parametros:
   DB_USER=<Nombre-de-usuario>
   DB_PASSWORD=<contraseña-del-usuario>
